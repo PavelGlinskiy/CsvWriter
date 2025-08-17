@@ -1,9 +1,15 @@
 package org.writer;
 
+import java.io.IOException;
 import java.util.List;
 
-public interface Writable {
+/**
+ * Интерфейс для записи объектов в CSV формат
+ */
+public interface Writable<T> {
 
-    void writeToFile(List<?> data, String fileName);
-
+    /**
+     * Записывает список объектов в CSV файл
+     */
+    void writeToCsv(List<T> data, String filePath) throws IOException;
 }
